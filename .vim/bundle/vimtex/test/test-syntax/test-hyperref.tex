@@ -1,0 +1,19 @@
+\documentclass{beamer}
+\usepackage{hyperref}
+
+\begin{document}
+
+\url{http://www.google.com}
+\url+http://www.google.com+
+\url{https://www.example.com/Spaces%20In%20URL/}
+\href{http://example.com}{Title text $with math$}
+\urldef{\mysite}\url{http://example.com}
+\hyperref[asdasd]{asd}
+
+\begin{equation}
+  e = mc^2
+  \label{einstein}
+\end{equation}
+Here, I'm referring to \autoref{einstein}.
+
+\end{document}

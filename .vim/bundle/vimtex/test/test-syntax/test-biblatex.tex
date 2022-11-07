@@ -1,0 +1,35 @@
+\documentclass{beamer}
+\usepackage{biblatex}
+\usepackage{csquotes}
+
+\addbibresource{../common/local1.bib}
+
+\begin{document}
+
+\textit{Text goes here~\cite{Local1}.}
+
+% Conceal example
+Bla bla bla, see Ref.~\cite{Local1,Local1}. For more info, see also \cite{Local1}.
+
+\autocite{}
+\bibentry{}
+\footcite{}
+\smartcite{}
+\Textcite[e.g.][]{}
+
+\cite{}
+\citealp*{}
+\citealp{}
+\citealt*{}
+\citealt{}
+\citeauthor*{}
+\citeauthor{asd}
+\citenum{}
+\citep{Local1}
+\citep[e.g.][]{Local1}
+\citet*{}
+\citetext{}
+\citeyear{}
+\citeyearpar{}
+
+\end{document}

@@ -1,0 +1,67 @@
+\ExplSyntaxOn
+\str_new:N \g_myfile_name_str
+\str_gset:Nn \g_myfile_name_str {myfile.txt}
+\str_new:N \g_myfile_old_mdfive_str
+\str_new:N \l_myfile_mdfive_str
+\cs_new_protected:Npn \getmdfive % get hash is not expandable, so protect
+{
+  \file_get_mdfive_hash:nN {\str_use:N \g_myfile_name_str} \l_myfile_mdfive_str
+  \str_use:N \l_myfile_mdfive_str
+}
+\cs_new:Npn \getoldmdfive
+{
+  \str_use:N \g_myfile_old_mdfive_str
+}
+\cs_new:Npn \IfMyfileChanged #1 #2
+{
+  \str_if_eq:NNTF \g_myfile_old_mdfive_str \l_myfile_mdfive_str {#2} {#1}
+}
+\AtEndDocument
+{
+  \iow_now:cx { @auxout }
+  {
+    \token_to_str:N \ExplSyntaxOn
+    \iow_newline:
+    \str_gset:Nn \token_to_str:N \g_myfile_old_mdfive_str {\str_use:N \l_myfile_mdfive_str}
+    \iow_newline:
+    \token_to_str:N \ExplSyntaxOff
+  }
+}
+\ExplSyntaxOff
+
+\ExplSyntaxOn
+\ExplSyntaxOn
+\ExplSyntaxOn
+\str_new:N \g_myfile_name_str
+\ExplSyntaxOff
+\str_new:N \g_myfile_name_str
+
+% Example from #1945
+\ExplSyntaxOn
+\use:x
+  {
+    \exp_not:N \includegraphics
+      [ \clist_use:Nn \g__pdfoverlay_graphics_options_clist { , } ]
+      { \g__pdfoverlay_pdf_file_name_str }
+  }
+\ExplSyntaxOff
+
+% Example from #2272
+\ExplSyntaxOn
+\c_tmpa_str
+\c_tmpa_str:nx
+\l_@@_int
+\cs_new:Nn \@@_shift_item:nn {
+  \str_set:Nx \l_tmpa_str { \str_head:n { #1 } }
+  \str_case:VnF \l_tmpa_str {
+    { x } {
+      \prop_put:Nnx \l_@@_b { #1 }
+        { \dim_eval:n { #2 + \l_@@_shiftx_dim } } }
+    { y } {
+      \prop_put:Nnx \l_@@_b { #1 }
+        { \dim_eval:n { #2 + \l_@@_shifty_dim } } }
+  } {
+    \prop_put:Nnn \l_@@_b { #1 } { #2 }
+  }
+}
+\ExplSyntaxOff

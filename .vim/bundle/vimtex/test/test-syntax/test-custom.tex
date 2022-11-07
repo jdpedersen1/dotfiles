@@ -1,0 +1,31 @@
+\documentclass{minimal}
+\newcommand\mygls\gls
+
+\begin{document}
+
+\cmdnormal[opt]{normal}
+\footnote{bolded text}
+\cmda[opt]{concealed command}
+\cmdb[opt]{concealed command and opts}
+
+$\mathcmdnormal{normal math}$
+$\mathcmda{bold and concealed}$
+$\mathcmdb{concealed}$
+$\R -> ℝ$
+$\E -> 𝔼$
+$\P -> ℙ$
+$\mathnote{$Math$ + text}$
+$\mathnoteC{$Math$ + text concealed}$
+$\text{$Math$ + text reference}$
+
+\undline{underlined}
+
+\gls{spellingerror}
+\mygls{spellingerror}{spellingerror}
+\slurp{spellingerror}{spellingerror}{spellingerror}
+
+% regex cmd name
+\Ac*{arg}
+\iacsp{arg}
+
+\end{document}

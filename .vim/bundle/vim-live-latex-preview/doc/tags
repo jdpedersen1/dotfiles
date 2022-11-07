@@ -1,0 +1,12 @@
+CheckLiveUpdateStatus()	live-latex-preview.txt	/*CheckLiveUpdateStatus()*
+CloseMuPDF()	live-latex-preview.txt	/*CloseMuPDF()*
+LaTeX-compilation	live-latex-preview.txt	/*LaTeX-compilation*
+LaunchMuPDF()	live-latex-preview.txt	/*LaunchMuPDF()*
+MuPDFForward()	live-latex-preview.txt	/*MuPDFForward()*
+MuPDFReverse()	live-latex-preview.txt	/*MuPDFReverse()*
+PDFViewingToggle()	live-latex-preview.txt	/*PDFViewingToggle()*
+UpdatingToggle()	live-latex-preview.txt	/*UpdatingToggle()*
+live-latex-preview	live-latex-preview.txt	/*live-latex-preview*
+live-latex-preview.txt	live-latex-preview.txt	/*live-latex-preview.txt*
+root	live-latex-preview.txt	/*root*
+subdocuments	live-latex-preview.txt	/*subdocuments*

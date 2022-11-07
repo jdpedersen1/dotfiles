@@ -1,0 +1,2 @@
+requests>=2.5.1
+httpie>=0.5.0

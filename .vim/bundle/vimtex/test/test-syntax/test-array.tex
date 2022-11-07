@@ -1,0 +1,38 @@
+\documentclass{article}
+\usepackage{tabularx}
+\usepackage{array}
+
+\newcolumntype\vcenter[1]{>{$\vcenter\bgroup\hbox\bgroup}#1<{\egroup\egroup$}}
+\newcolumntype{d}[1]{>{\rightdots{#1}}r<{\endrightdots}}
+
+\begin{document}
+
+\begin{tabular}{*{3}{>{$}c<{$}}}
+  \hline
+  Hello world !\tabularnewline
+  \hline
+\end{tabular}
+
+\begin{tabular}{l*{4}{m{1cm}}}
+  \hline
+  Hello world !\tabularnewline
+  \hline
+\end{tabular}
+
+% Array specific math separators
+\begin{tabular}[ht]{|@{.}>{\centering$}m{1cm}<{$}|}
+  \hline
+  Hello world !\tabularnewline
+  \hline
+\end{tabular}
+
+% Array environment also supports similar constructs
+\[
+  \mathrm{a} =
+  \begin{array}{l*{4}{m{1cm}}r}
+    \mathrm{b} & bar & baz & a & b & 2\\
+    foo & bar & baz & a & b & 2\\
+  \end{array}
+\]
+
+\end{document}

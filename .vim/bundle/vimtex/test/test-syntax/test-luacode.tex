@@ -1,0 +1,28 @@
+\documentclass[notitlepage,12pt]{article}
+\usepackage{luacode}
+\newcommand{\somecommand}{
+  \loop
+  \begingroup%
+  \directlua{loopcnt=loopcnt+1}%
+  \ifnum\somecount=1%
+    \directlua{prevcount=prevcount+\luastring{\pgfmathresult}}%
+  \else%
+    \directlua{prevcount=prevcount+\luastring{\someamt}}%
+  \fi%
+  \endgroup%
+  \if\someothercnt0%
+    \repeat%
+    \directlua{linecount=math.floor(prevcount)+1;}%
+  \fi
+}
+
+\begin{document}
+\directlua{
+  local foo = "this is lua syntax highlighting";
+  function helloworld(input)
+    local output = input + \luastring{\something} + "123";
+    return output
+  end
+  prevcount  prevcount + \luastring{\something} + "123";
+}
+\end{document}
