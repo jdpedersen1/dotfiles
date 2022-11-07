@@ -1,0 +1,140 @@
+ /* IMPORTANT */
+  /* Get window_control_placeholder_support.css Window controls will be all wrong without it */
+  /* Modify these to change relative widths or default height */
+  #navigator-toolbox {
+    --uc-navigationbar-width: 720px;
+    --uc-toolbar-height: 38px;
+  }
+  /* Override for other densities */
+  :root[uidensity="compact"] #navigator-toolbox {
+    --uc-toolbar-height: 30px;
+  }
+  :root[uidensity="touch"] #navigator-toolbox {
+    --uc-toolbar-height: 38px;
+  }
+  :root[uidensity=compact] #urlbar-container.megabar {
+    --urlbar-container-height: var(--uc-toolbar-height) !important;
+    padding-block: 0 !important;
+  }
+  :root[uidensity=compact] #urlbar.megabar {
+    --urlbar-toolbar-height: var(--uc-toolbar-height) !important;
+  }
+
+  #PanelUI-button { display:none!important; }
+
+  /* prevent urlbar overflow on narrow windows */
+  /* Dependent on how many items are in navigation toolbar and tabs-/nav-bar ratio - ADJUST AS NEEDED */
+  @media screen and (max-width: 350px) {
+    #urlbar-container {
+      min-width: unset !important
+    }
+  }
+  ::-moz-selection {background-color: #008080 !important;}
+  #toolbar-menubar {
+    height: initial !important;
+  }
+  #toolbar-menubar[inactive]> :not(.titlebar-buttonbox-container) {
+    opacity: 0;
+    pointer-events: none;
+  }
+  #toolbar-menubar[inactive] {
+    margin-bottom: calc(0px - var(--uc-toolbar-height))
+  }
+  #TabsToolbar>.titlebar-buttonbox-container,
+  .titlebar-spacer[type="post-tabs"] {
+    display: none;
+  }
+  #TabsToolbar {
+    margin-left: var(--uc-navigationbar-width);
+  }
+  #toolbar-menubar[autohide="true"]>.titlebar-buttonbox-container,
+  #tabbrowser-tabs,
+  .tabbrowser-tab[pinned] {
+    height: var(--uc-toolbar-height) !important;
+    min-height: var(--uc-toolbar-height) !important;
+  }
+  #nav-bar {
+    margin-left: calc(35vw -var(--uc-navigationbar-width));
+    margin-right: calc(100vw - var(--uc-navigationbar-width));
+    margin-top: calc(0px - var(--uc-toolbar-height));
+  }
+  /* Override style set in window_control_placeholder_support.css */
+  #nav-bar {
+    border-left-width: 0px !important
+  }
+  #nav-bar::before {
+    display: none !important
+  }
+  /* Rules specific to window controls on right layout */
+  @supports -moz-bool-pref("layout.css.osx-font-smoothing.enabled") {
+    :root:not([inFullscreen]) #TabsToolbar-customization-target>.titlebar-spacer[type="pre-tabs"] {
+      width: var(--uc-window-drag-space-width) !important;
+      display: -moz-box !important;
+    }
+    #TabsToolbar>.titlebar-buttonbox-container {
+      display: -moz-box;
+    }
+  }
+  /* 1px margin on touch density causes tabs to be too high */
+  .tab-close-button {
+    margin-top: 0 !important;
+    color: #d84949 !important;
+    display: # !important;
+  }
+  /* Hide dropdown placeholder */
+  #urlbar-container:not(:hover) .urlbar-history-dropmarker {
+    margin-inline-start: -28px;
+  }
+  /* Fix customization view */
+  #customization-panelWrapper>.panel-arrowbox>.panel-arrow {
+    margin-inline-end: initial !important;
+  }
+  #nav-bar {
+    max-height: 31px !important;
+    background: #000000 !important
+  }
+
+#urlbar {
+    border: 1px solid #d84949 !important;
+    text-align: center !important;
+    margin-top: 2px !important;
+    margin-left: -5px !important;
+    border-radius: 0px;
+    padding: 0px !important;
+    color: #ffffff !important;
+    height: 25px;
+    font-family: Fantasque Sans Mono !important;
+    font-size: 12px;
+}
+
+#urlbar-background {
+    background-color: rgb(38,38,38) !important;
+}
+
+
+
+.tab-background[selected="true"] {
+    background-color: transparent !important;
+    background-image: none !important;
+}
+
+.tabbrowser-tab[selected="true"] {
+    color: #b8b8b8 !important;
+    font-family: "Fantasque Sans Mono" !important;
+    font-weight: bold;
+    font-size: 14px;
+    border-bottom: 2px solid #008080 !important;
+    border-left: 0px solid #b8b8b8 !important;
+    border-right: 2px solid #008080 !important;
+    border-top: 0px solid #b8b8b8 !important;
+}
+
+#tabbrowser-tabs {
+    width: 100vw !important;
+    height: 25px;
+    color: #008080 !important;
+    background-color: #000000 !important;
+    font-family: "Fantasque Sans Mono" !important;
+}
+
+
